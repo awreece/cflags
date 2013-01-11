@@ -16,6 +16,8 @@ typedef enum {
         f_string
 } flag_type_t;
 
+// Parses the flags, mutating argv so eventually all non-flag arguments are at
+// the end.
 void parse_flags(int argc, char *const *argv);
 
 // TODO(awreece) Don't pollute global namespace?
