@@ -31,17 +31,21 @@ The supported types and example usage are:
 
     // Compile with `gcc main.c flag.c`.
 
+    #include <stdio.h>
+
     #include "flag.h"
 
-    FLAG_INT(num_threads, 4, "Number of threads to use");
-    FLAG_BOOL(use_locks, false, "Use locks or atomic instructions");
+    // Bool automatically defines `--locks` and `--nolocks`.
+    FLAG_BOOL(locks, false, "Use locks or atomic instructions");
     FLAG_DOUBLE(sleep_time, 0.3, "Time to sleep between iterations");
     FLAG_STRING(input, "hello.csv", "File to parse");
+    FLAG_INT(num_threads, 4, "Number of threads to use");
 
     int main(int argc, char** argv) {
       parse_flags(argc, argv);
 
-      // Something interesting here!
+      printf("threads: %d, locks: %d, sleep_time: %f, input: %s\n",
+             num_threads, locks, sleep_time, input);
     }
 
 ## How does it work? ##
