@@ -57,4 +57,5 @@ in a global array that is passed to `getopt`.
 ## You don't support &lt;feature&gt; ##
 
 Ask me for something and provide a compelling case for it (and hopefully a real
-example that needs it) and I might do it. :) I'm <awreece at gmail dot com>.
+example that needs it) and I might do it. :) I'm &lt;awreece at gmail dot
+com&gt;.
