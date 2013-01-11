@@ -1,19 +1,5 @@
 # A command line flag library for C #
 
-## Why not use `getopt` ##
-
-After using [`google-gflags`](https://code.google.com/p/gflags/), `getopt` 
-became unbearable to use for command line flag parsing. I didn't want to have
-to define a usage statement or write the boilerplate for every program. I didn't
-want to have to define every flag in the main file (I want to define flags in
-the library where they are used). I figured there had to be a better way, but 
-I couldn't find it. So I made this library, inspired by `google-gflags`, to
-avoid the aforementioned shortcomings of `getopt`.
-
-Also, I use `getopt` internally (althought that may change at a later date -
-I belive `getopt` stops parsing after seeing the first non-flag argument which
-I don't quite agree with).
-
 ## Usage ##
 
 To use this library, you define your flags anywhere you want to in your program
@@ -47,6 +33,20 @@ The supported types and example usage are:
       printf("threads: %d, locks: %d, sleep_time: %f, input: %s\n",
              num_threads, locks, sleep_time, input);
     }
+
+## Why not use `getopt` ##
+
+After using [`google-gflags`](https://code.google.com/p/gflags/), `getopt`
+became unbearable to use for command line flag parsing. I didn't want to have
+to define a usage statement or write the boilerplate for every program. I didn't
+want to have to define every flag in the main file (I want to define flags in
+the library where they are used). I figured there had to be a better way, but
+I couldn't find it. So I made this library, inspired by `google-gflags`, to
+avoid the aforementioned shortcomings of `getopt`.
+
+Also, I use `getopt` internally (althought that may change at a later date -
+I belive `getopt` stops parsing after seeing the first non-flag argument which
+I don't quite agree with).
 
 ## How does it work? ##
 
